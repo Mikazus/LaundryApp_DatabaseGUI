@@ -62,9 +62,8 @@ Pastikan semua tools berikut sudah terinstall sebelum clone repo:
 | SQL Server                        | 2019+ | https://www.microsoft.com/sql-server |
 | SQL Server Management Studio (SSMS) | 19+ | https://aka.ms/ssmsfullsetup |
 | Git                               | Latest | https://git-scm.com |
-| Maven                             | 3.8+ | (bisa pakai bawaan IntelliJ) |
 
-> **Catatan:** SQL Server Express (gratis) sudah cukup untuk proyek ini.
+
 
 ---
 
@@ -73,8 +72,8 @@ Pastikan semua tools berikut sudah terinstall sebelum clone repo:
 ### LANGKAH 1 — Clone Repositori
 
 ```bash
-git clone https://github.com/Mikazus/Laundry-App.git
-cd laundry-app
+git clone https://github.com/Mikazus/LaundryApp_DatabaseGUI.git
+cd LaundryApp_DatabaseGUI
 ```
 
 ---
@@ -135,8 +134,6 @@ private static final String DB_PASSWORD = "Admin123!";    // ← password yang A
 private static final int    DB_PORT     = 1433;
 ```
 
-> ⚠️ **PENTING:** Jangan commit password asli ke GitHub!
-> Gunakan `.env` atau file `.properties` yang sudah ada di `.gitignore`.
 
 ---
 
@@ -230,19 +227,21 @@ Diterima → Diproses → Selesai → Diambil
 |------|--------|
 | `vw_Transaksi_Lengkap` | Join transaksi dengan data pelanggan & karyawan |
 
+
 ---
+## ✨ Pengembangan Lanjut & Deployment
 
-## 📦 Dependencies (pom.xml)
+Sebagai langkah pengembangan berikutnya, aplikasi ini juga sedang diarahkan ke versi modern berbasis **TypeScript** agar lebih mudah dikembangkan, diuji, dan di-deploy ke lingkungan web.
 
-```xml
-<dependency>
-    <groupId>com.microsoft.sqlserver</groupId>
-    <artifactId>mssql-jdbc</artifactId>
-    <version>12.4.2.jre11</version>
-</dependency>
-```
+Versi deployment dapat diakses di:
 
-Driver ini di-download otomatis oleh Maven. Tidak perlu download manual.
+[Pais Clean Wash - TypeScript Deployment](https://pais-orcin.vercel.app/)
+
+Beberapa fokus pengembangan lanjutan:
+- Antarmuka yang lebih responsif dan siap lintas perangkat
+- Struktur kode yang lebih modular untuk maintenance jangka panjang
+- Deployment yang lebih cepat melalui platform hosting modern
+- Fondasi yang lebih fleksibel untuk fitur web di masa depan
 
 ---
 
