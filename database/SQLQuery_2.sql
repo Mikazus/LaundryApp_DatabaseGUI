@@ -1,3 +1,8 @@
+kodeStruk VARCHAR(50) FOREIGN KEY REFERENCES Transaksi(kodeStruk),
+	layananId INT FOREIGN KEY REFERENCES Layanan(layananId),
+	berat FLOAT NOT NULL,
+	CONSTRAINT PK_DETAIL_TRANSAKSI PRIMARY KEY (kodeStruk, layananId) 
+);
 CREATE DATABASE PAIS_LAUNDRY;
 GO
 
@@ -31,7 +36,7 @@ CREATE TABLE detail_transaksi (
 	kodeStruk VARCHAR(50) FOREIGN KEY REFERENCES Transaksi(kodeStruk),
 	layananId INT FOREIGN KEY REFERENCES Layanan(layananId),
 	berat FLOAT NOT NULL,
-	PRIMARY KEY (kodeStruk, layananId) 
+	CONSTRAINT PK_DETAIL_TRANSAKSI PRIMARY KEY (kodeStruk, layananId) 
 );
 
 INSERT INTO Layanan (namaLayanan, hargaPerKg)
